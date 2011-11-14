@@ -4,7 +4,7 @@ from maybe import Maybe
 
 Maybe(someobj).someproperty.somemethod()
 
-returns Null() instead of raising AttributeError if someobj is None
+returns NullType() instead of raising AttributeError if someobj is None
 
 opts = {'person': 'Very important person'}
 
@@ -39,13 +39,13 @@ True
 
 2. by instance check
 
-from maybe import Null
+from maybe import NullType
 someobj = None
 
-isinstance(Maybe(someobj), Null)
+isinstance(Maybe(someobj), NullType)
 True
 
-isinstance(someobj, Null)
+isinstance(someobj, NullType)
 True
 
 

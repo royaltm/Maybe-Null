@@ -1,4 +1,4 @@
-from maybe import Maybe, Null, Value
+from maybe import Maybe, NullType, Value
 
 class User(object):
     def __init__(self, name):
@@ -20,9 +20,9 @@ def test(user):
         'repr(bool(user))', 
         'repr(Value(Maybe(user)))',
         'repr(Value(Maybe(user).name) is None)',
-        'repr(isinstance(user, Null))',
-        'repr(isinstance(Maybe(user), Null))',
-        'repr(isinstance(Maybe(user).name, Null))',
+        'repr(isinstance(user, NullType))',
+        'repr(isinstance(Maybe(user), NullType))',
+        'repr(isinstance(Maybe(user).name, NullType))',
         'repr(user==None)',
         'repr(Maybe(user)==None)',
         'repr(Maybe(user).name==None)',
