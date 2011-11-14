@@ -15,7 +15,7 @@ from maybe import NullType
 len(Maybe(Maybe(opts).get('robot')))
 0
 
-len(Maybe(opts).get('robot', NullType()))
+len(Maybe(opts).get('robot', NullType(None)))
 0
 
 opts = None
