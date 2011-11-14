@@ -9,6 +9,7 @@ class NullType(object):
             else object.__new__(cls, *p, **k)
     def __call__(self, *arg, **kw): return self
     def __getattr__(self, attr): return self
+    def __getitem__(self, item): return self
     def __len__(self): return 0
     def __str__(self): return ''
     def __repr__(self): return 'Null'
