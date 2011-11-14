@@ -12,7 +12,7 @@ len(Maybe(opts).get('person'))
 
 21
 
-len(Maybe(opts).get('robot'))
+len(Maybe(Maybe(opts).get('robot')))
 
 0
 
