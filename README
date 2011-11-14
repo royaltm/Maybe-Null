@@ -48,3 +48,10 @@ True
 isinstance(someobj, Null)
 True
 
+
+
+Inspired by:
+- Avdi Grimm: http://avdi.org/devblog/2011/05/30/null-objects-and-falsiness/
+- herenowcoder's not-none: https://github.com/herenowcoder/not_none
+and
+- raganwald's andand https://github.com/raganwald/andand
