@@ -1,5 +1,22 @@
 from maybe import Maybe, NullType, Value
 
+def test_maybe():
+    someobj = "Some String"
+    assert Maybe(someobj) is someobj
+    assert Maybe(someobj).split()[0] == "Some"
+    assert str(Maybe(someobj).split()[0]) == "Some"
+    assert len(Maybe(someobj).split()[0]) == 4
+    someobj = None
+    assert Maybe(someobj) == None
+    assert Value(Maybe(someobj)) is None
+    assert Maybe(someobj).split()[0] == None
+    assert len(Maybe(someobj).split()[0]) == 0
+    assert str(Maybe(someobj).split()[0]) == ''
+    assert (Maybe(someobj).split()[0] or 'default') == 'default'
+    assert bool(Maybe(someobj).split()[0]) == False
+    assert (not Maybe(someobj).split()[0]) == True
+    print 'ok'
+
 class User(object):
     def __init__(self, name):
         self.name = name
@@ -9,7 +26,7 @@ class User(object):
 
 users = { 1: User('Haskell Curry') }
 
-def test(user):
+def info(user):
     print
     for expr in ['repr(user)',
         'Maybe(user).name.capitalize()',
@@ -29,5 +46,6 @@ def test(user):
         ]:
             print expr, ':=', eval(expr)
 
-test(users.get(1))
-test(users.get(2))
+test_maybe()
+info(users.get(1))
+info(users.get(2))
