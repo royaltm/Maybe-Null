@@ -26,6 +26,7 @@ len(Maybe(opts).get('robot'))
 Testing against None.
 
 1. by equality and identity:
+from maybe import Value
 
 someobj = None
 
