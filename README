@@ -1,0 +1,49 @@
+Usage:
+
+from maybe import Maybe
+
+Maybe(someobj).someproperty.somemethod()
+
+returns Null() instead of raising AttributeError if someobj is None
+
+opts = {'person': 'Very important person'}
+
+len(Maybe(opts).get('person'))
+
+21
+
+len(Maybe(opts).get('robot'))
+
+0
+
+opts = None
+
+len(Maybe(opts).get('robot'))
+
+0
+
+
+Testing against None.
+
+1. by equality and identity:
+
+someobj = None
+
+Value(Maybe(someobj)) is None
+True
+
+Maybe(someobj) == None
+True
+
+
+2. by instance check
+
+from maybe import Null
+someobj = None
+
+isinstance(Maybe(someobj), Null)
+True
+
+isinstance(someobj, Null)
+True
+
