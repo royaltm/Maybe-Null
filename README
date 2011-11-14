@@ -9,11 +9,13 @@ returns NullType() instead of raising AttributeError if someobj is None
 opts = {'person': 'Very important person'}
 
 len(Maybe(opts).get('person'))
-
 21
 
+from maybe import NullType
 len(Maybe(Maybe(opts).get('robot')))
+0
 
+len(Maybe(opts).get('robot', NullType()))
 0
 
 opts = None
