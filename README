@@ -67,7 +67,7 @@ if user:
 
 with Maybe we can shorten it to:
 
-product = Maybe([p for p in Maybe(user).products if p.is_valid])[0]
+product = Maybe([p for p in Maybe(user).products if p.is_valid] or None)[0]
 
 
 
