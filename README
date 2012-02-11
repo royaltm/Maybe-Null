@@ -51,6 +51,25 @@ isinstance(someobj, NullType)
 True
 
 
+Maybe as iterable:
+
+Let's assume that `user` is an instance of User object that have `products` collection.
+We want first product that satisfies `is_valid` criteria, however `user` may be None
+or may not have any product satisfying our criteria:
+
+Normally we would write something like this:
+
+product = None
+if user:
+  valid_products = [p for p in user.products if p.is_valid]
+  if valid_products:
+    product = valid_products[0]
+
+with Maybe we can shorten it to:
+
+product = Maybe([p for p in Maybe(user).products if p.is_valid])[0]
+
+
 
 Inspired by:
 - Avdi Grimm: http://avdi.org/devblog/2011/05/30/null-objects-and-falsiness/
